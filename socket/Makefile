@@ -12,7 +12,11 @@ all:server_socket
 clean:
 	rm -f *.o server_socket *.elf *.map
 
-aesdsocket: server_socket.o
+server_socket: server_socket.o
 	#$(CC) $(CFLAGS)  -c -o aesdsocket.o aesdsocket.c
 	#$(CC) $(CFLAGS) -I/ aesdsocket.o -o aesdsocket
 	$(CC) $(CFLAGS) $^ -o $@ $(INCLUDES) $(LDFLAGS)
+	
+
+	
+
