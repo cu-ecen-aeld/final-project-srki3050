@@ -11,16 +11,17 @@ GENIMAGE_TMP="${BUILD_DIR}/genimage.tmp"
 for arg in "$@"
 do
 	case "${arg}" in
-
+		
+		# SPI/I2C
 		--add-I2C)
 		if ! grep -qE '^dtparam=i2c_arm=on' "${BINARIES_DIR}/rpi-firmware/config.txt"; then
 			cat << __EOF__ >> "${BINARIES_DIR}/rpi-firmware/config.txt"
---enable I2C
+# enable I2C
 dtparam=i2c_arm=on
 __EOF__
 		fi
 		;;
-
+		
 		--gpu_mem_256=*|--gpu_mem_512=*|--gpu_mem_1024=*)
 		# Set GPU memory
 		gpu_mem="${arg:2}"

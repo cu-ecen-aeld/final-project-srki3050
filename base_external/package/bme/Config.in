@@ -1,5 +1,5 @@
-config BR2_PACKAGE_BME280
-	bool "bme280"
+config BR2_PACKAGE_BME
+	bool "bme"
 	help
 	  Includes the writer executable, finder.sh and tester.sh in the kernel image.
 	  Used to understand buildroot external trees and package builds.
